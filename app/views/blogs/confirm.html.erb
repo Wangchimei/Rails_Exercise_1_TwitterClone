@@ -1,2 +1,10 @@
-<h1>Blogs#confirm</h1>
-<p>Find me in app/views/blogs/confirm.html.erb</p>
+<h2>Preview</h2>
+
+<%= form_with(model:@blog, url:blogs_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p><%= @blog.content %></p>
+
+  <%= form.submit "Quack!" %>
+  <%= form.submit "Back", name: 'back' %>
+<% end %>
+

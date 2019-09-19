@@ -2673,3 +2673,755 @@ Processing by BlogsController#new as HTML
 Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/blogs" for ::1 at 2019-09-19 18:02:23 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kimmywang/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 199ms (Views: 189.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:02:23 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:02:27 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (204.4ms)
+  Rendered blogs/new.html.erb within layouts/application (205.8ms)
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `action' for #<#<Class:0x00007f9895272a10>:0x00007f9891957e88>
+Did you mean?  action_name):
+     9: <% end %>
+    10: 
+    11: <div>
+    12:   <%= form_with(model: @blog, local: true, url: new_or_edit) do |form| %>
+    13:     <p><%= form.label :content, class: "hidden" %></p>
+    14:     <p><%= form.text_field :content%><p>
+    15:     <p><%= form.submit "Quack" %></p>
+  
+app/helpers/blogs_helper.rb:3:in `new_or_edit'
+app/views/blogs/_form.html.erb:12:in `_app_views_blogs__form_html_erb__3529083605526584115_70146611638060'
+app/views/blogs/new.html.erb:3:in `_app_views_blogs_new_html_erb__1995507090185555935_70146659287960'
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:03:04 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (9.7ms)
+  Rendered blogs/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 35ms (Views: 25.9ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:03:06 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R7L1ykzTz3BpZwWcD1/r9207uOTEDBeSPnUfa1tRFkeeQBTOGI2o1HPih2Duqbn5Et+XJMmwDlKOX3bLXx6wnA==", "blog"=>{"content"=>""}, "commit"=>"Quack"}
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (2.5ms)
+  Rendered blogs/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:03:13 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ve0jjvbbtVI8EzEBcMmu5ko+nk6/RnXc2K6dzHJWq45kH8KKooXS9iaWs/2RP/zoNdqxjrL6bBxohPRsdhkNVQ==", "blog"=>{"content"=>"bye and hello"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"blogs"}, missing required keys: [:id]):
+    1: <h2>Preview</h2>
+    2: 
+    3: <% form_with(model:@blog, local: true, url:blog_path) do |form| %>
+    4:   <%= form.hidden_field :content %>
+    5:   <p><%= @blog.content%></p>
+    6:   
+  
+app/views/blogs/confirm.html.erb:3:in `_app_views_blogs_confirm_html_erb___4324098396587319142_70146627848800'
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:04:23 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+Completed 404 Not Found in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:55:in `set_blog'
+Started GET "/" for ::1 at 2019-09-19 18:04:39 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/1/edit" for ::1 at 2019-09-19 18:04:43 +0900
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.4ms)
+  Rendered blogs/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/blogs/1" for ::1 at 2019-09-19 18:04:47 +0900
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NQQAs/4dRo4b36wiTeBlKnlvlkDytDq3WuGHZdcT1GAgkvN8SFGR9HCw0oPraYpedwgKoWJJ7IaAmy8hYZFz9A==", "blog"=>{"content"=>" your thoughts and you change your world."}, "commit"=>"Quack", "id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:27
+  [1m[36mBlog Update (0.4ms)[0m  [1m[33mUPDATE "blogs" SET "content" = $1, "updated_at" = $2 WHERE "blogs"."id" = $3[0m  [["content", " your thoughts and you change your world."], ["updated_at", "2019-09-19 09:04:47.693092"], ["id", 1]]
+  ↳ app/controllers/blogs_controller.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:27
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:04:47 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/2" for ::1 at 2019-09-19 18:04:51 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:04:52 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/2" for ::1 at 2019-09-19 18:04:53 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:04:54 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/2" for ::1 at 2019-09-19 18:04:55 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:04:57 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/2/edit" for ::1 at 2019-09-19 18:04:58 +0900
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.5ms)
+  Rendered blogs/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:04:59 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/blogs/2" for ::1 at 2019-09-19 18:05:02 +0900
+Processing by BlogsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mLkwtw4AZTt+OZ7xGtajtrH0VeEwVi08RZW2FoyjXSFBS9GzWl4Cn2S8HA37IPG4zhB6IT3qNPz1v9+2iOz7+g==", "id"=>"2"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:44
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/blogs_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:44
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:05:02 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:05:07 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.4ms)
+  Rendered blogs/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:05:13 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:05:14 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.3ms)
+  Rendered blogs/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:05:15 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"daS6iaxIXCV7HrTubiKgmp+QmyIhXtTfeLWlNHg0NK0zBeyLjFsQdYeNvUsW7Eby3zSadAdojv9MqDNhvEr2jw==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:06:46 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:55:in `set_blog'
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:09:20 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+Completed 404 Not Found in 5ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:55:in `set_blog'
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:11:10 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+Completed 404 Not Found in 6ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:55:in `set_blog'
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:11:21 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KCYmXosiZ6TX5m8LRvw/iaN+OSegfAA2csfAmynsvAXx1Mda33wAAM1j7fenCm2H3JoW563AGfbC7ak7LaMa3g==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:11:53 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KCYmXosiZ6TX5m8LRvw/iaN+OSegfAA2csfAmynsvAXx1Mda33wAAM1j7fenCm2H3JoW563AGfbC7ak7LaMa3g==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 8.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:11:56 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:11:56 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.4ms)
+  Rendered blogs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:11:57 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vWjpcbKppJ0K0dy28jPpvqNuYd8XLZTm5p0ppPxVLg77yb9zkrrozfZC1ROK/Q/W48pgiTEbzsbSgL/xOCvsLA==", "blog"=>{"content"=>""}, "commit"=>"Quack"}
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.6ms)
+  Rendered blogs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:12:00 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6g1TxFsQbhLBjd1AnncV/8OXdZPFW6b275JcqzeJVdUz/7LAD04JttsIX7x/gUfxvHNaU8jnvzZfuDULM8bzDg==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:13:57 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+Completed 404 Not Found in 6ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:55:in `set_blog'
+Started GET "/" for ::1 at 2019-09-19 18:14:01 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:14:03 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.5ms)
+  Rendered blogs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:14:05 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuDCWm4RaB80h5DnTzhTsZaXbY5+VC/uDRjir6vxcuiIQZRYTgIkT8gUmUI39rXZ1jNs2Fhidc45BXT6b4+wyg==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:14:07 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:55:in `set_blog'
+Started GET "/" for ::1 at 2019-09-19 18:14:09 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:14:10 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:14:11 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j36HvTROKewM2WjPIuqR2givjVUxoo+9DwtsOecRz57J39G/FF1lvPBKYWpaJHeySAuMAxeU1Z07FvpsI28NvA==", "blog"=>{"content"=>""}, "commit"=>"Quack"}
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.1ms)
+  Rendered blogs/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:14:14 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iLsLwFvNo5rSD3ZVUBtBMjiJ3isDXmqU7qB0jhHZd2xRSerED5PEPsiK9Kmx7RM8R23x6w7ic1Reih0uFZbRtw==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for ::1 at 2019-09-19 18:16:14 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.0ms)
+  Rendered blogs/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:16:17 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JWDRRtsD6s5ZCYV8mNSa4D3aC+xKzkewItENPteRf3b8kjBCj12NakOMB4B5IsjuQj4kLEdyXnCS+2Se097ZrQ==", "blog"=>{"content"=>"Fun"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for ::1 at 2019-09-19 18:16:24 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h0ljzMhPHgzwvQuwaj/6qVZxZhLNrUH1DgSp6dUL4KZeu4LInBF5qOo4iUyLyainKZVJ0sARWDW+LsBJ0URGfQ==", "blog"=>{"content"=>"Fun"}, "back"=>"戻る"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:14
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "Fun"], ["created_at", "2019-09-19 09:16:24.410623"], ["updated_at", "2019-09-19 09:16:24.410623"]]
+  ↳ app/controllers/blogs_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:14
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:16:24 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:16:28 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:16:32 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oa9odJNlC+eh3KD+Rp5wLMPgAJzkmJaAiTqoxLuj/Mx/Dj52s3ZHt11PqVs+UJZEg0QBysKuzKC9Jz6Rf90+7g==", "blog"=>{"content"=>"Fun"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:18:00 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:55
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:55:in `set_blog'
+Started GET "/blogs" for ::1 at 2019-09-19 18:18:02 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:18:03 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.4ms)
+  Rendered blogs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:18:05 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3NfLD2ZK+lOLzO7vnZyw0LsJlrf+OOBw7Icb6ie9rraadp0NRlm2A3df50rlUla4+62X4dgOulDYmo2/48NslA==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for ::1 at 2019-09-19 18:18:14 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5bfOBlx+5v3J54Eok4rlF7pNq5q3W6OC41X25mn9+9w8RS8CCCCBWdNiA9RyfLcZxamEWrrnukJTf59GbbJdBw==", "blog"=>{"content"=>"Yes"}, "back"=>"xx"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:14
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "Yes"], ["created_at", "2019-09-19 09:18:14.637505"], ["updated_at", "2019-09-19 09:18:14.637505"]]
+  ↳ app/controllers/blogs_controller.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:14
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:18:14 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:18:32 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.7ms)
+  Rendered blogs/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:18:34 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"277zaLMFKzknxIfk8/He/+NidYG78sdve62qg62JQWKdH6VqkxZnadtXjkGLPziXo8Z0153EnU9PsDzWafeDQA==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for ::1 at 2019-09-19 18:18:36 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eoDIdUUD6OMkauiQb23Y2AUR8xT9ZPmPgavts+7DXEyjcilxEV2PRz7vamyOm4rWevXc1PDY4E8xgYQT6oz6lw==", "blog"=>{"content"=>"Yes"}, "back"=>"Back"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:14
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "Yes"], ["created_at", "2019-09-19 09:18:36.714450"], ["updated_at", "2019-09-19 09:18:36.714450"]]
+  ↳ app/controllers/blogs_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:14
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:18:36 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:19:51 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.3ms)
+  Rendered blogs/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 21ms (Views: 13.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:19:55 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BXRCTOMvLF2ENx2lbYN1MY6F2LOrFbcNHrZlxUnHuE1D1RROwzxgDXikFAAVTZNZziHZ5Y0j7S0qq/OQjbl6bw==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for ::1 at 2019-09-19 18:19:57 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZNnmcNIDjPfT/kDUQRZQ1Lb1V8mSAxIzEolYUZHfAPa9Kwd0hl3rU8l7wiig4ALayRF4CZ+/C/OiozHxlZCmLQ==", "blog"=>{"content"=>"Yes"}, "back"=>"Back"}
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.8ms)
+  Rendered blogs/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <div><%= notice %></div>
+    2: 
+    3: <% if @blog.errors.any?%>
+    4:   <div class="error_messages">
+    5:     <% @blog.errors.full_messages.each do |messages|%>
+    6:       <p><%= messages %></p>
+  
+app/views/blogs/_form.html.erb:3:in `_app_views_blogs__form_html_erb__3529083605526584115_70146658652180'
+app/views/blogs/new.html.erb:3:in `_app_views_blogs_new_html_erb__1995507090185555935_70146658453980'
+app/controllers/blogs_controller.rb:14:in `create'
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:21:25 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+Completed 404 Not Found in 6ms (ActiveRecord: 2.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:59:in `set_blog'
+Started GET "/blogs/confirm" for ::1 at 2019-09-19 18:21:28 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=confirm):
+  
+app/controllers/blogs_controller.rb:59:in `set_blog'
+Started GET "/" for ::1 at 2019-09-19 18:21:33 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-19 18:21:34 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.6ms)
+  Rendered blogs/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:21:36 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZzBNDVesraffEbLspOZkFvc3gBHgkxyTZcJD3m+RRxshkRsPd7/h9yOCu0ncKIJ+t5OBR8alRrNR39WLq++FOQ==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for ::1 at 2019-09-19 18:21:37 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JUQaqDNLWoBVdVVm+XitPSZDICaRCObbvx759x/gwQ78tvusZxU9JE/w15oYjv8zWacP5py0/xsPNJBXG69n1Q==", "blog"=>{"content"=>"Yes"}, "back"=>"Back"}
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.1ms)
+  Rendered blogs/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-19 18:21:38 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"elVcY9ZCBgz51vyHQmCKgIk4IR86c8tbrP4zBk+ZD1Gjp71nghxhqONTfnujltiO9twO3zfP0psc1FqmS9apig==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/confirm.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for ::1 at 2019-09-19 18:21:40 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8jm9FBI2hAUQvug73x2ntAHePz9/ZNdhZSokFY37en4ry1wQRmjjoQo7asc+6/W6fjoQ/3LYzqHVAE21ibTcpQ==", "blog"=>{"content"=>"Yes"}, "commit"=>"Quack!"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:17
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "Yes"], ["created_at", "2019-09-19 09:21:40.165114"], ["updated_at", "2019-09-19 09:21:40.165114"]]
+  ↳ app/controllers/blogs_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:17
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:21:40 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/blogs/14" for ::1 at 2019-09-19 18:21:45 +0900
+Processing by BlogsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mX/EcqxOiSimb+d/pMmSzAILRb3ng+dnPXDgqbhiSOdAjSV2+BDujLzqZYNFP8DCfe9qfeo//qeNWokJvC3uPA==", "id"=>"14"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:48
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/blogs_controller.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:48
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-19 18:21:45 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:8
+  Rendered blogs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.3ms)
+
+

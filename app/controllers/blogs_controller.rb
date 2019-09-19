@@ -11,10 +11,14 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    if @blog.save
-      redirect_to blogs_path, notice: "New quack is now live."
-    else
+    if params[:back]
       render :new
+    else
+      if @blog.save
+        redirect_to blogs_path, notice: "New quack is now live."
+      else
+        render :new
+      end
     end
   end
 
@@ -36,7 +40,8 @@ class BlogsController < ApplicationController
   end
 
   def confirm
-
+    @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
   end
 
   def destroy
