@@ -1,0 +1,19 @@
+<div><%= notice %></div>
+
+<% if @blog.errors.any?%>
+  <div class="error_messages">
+    <% @blog.errors.full_messages.each do |messages|%>
+      <p><%= messages %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<div>
+  <%= form_with(model: @blog, local: true) do |form| %>
+    <p><%= form.label :content, class: "hidden" %></p>
+    <p><%= form.text_field :content%><p>
+    <p><%= form.submit "Quack" %></p>
+  <% end %>
+</div>
+
+<div><%= link_to 'Back', blogs_path, class: 'btn btn-default' %></div>
