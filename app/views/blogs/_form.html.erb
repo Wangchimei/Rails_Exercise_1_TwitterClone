@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="block"></div>
+  <div class="block">
     <% if @blog.errors.any?%>
       <div class="block notification">
         <% @blog.errors.full_messages.each do |messages|%>
@@ -23,3 +23,4 @@
       </div>
     <% end %>
   </div>
+</div>

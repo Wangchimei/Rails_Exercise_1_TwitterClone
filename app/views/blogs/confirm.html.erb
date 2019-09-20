@@ -1,12 +1,11 @@
 <div class="container">
-  <div class="block hero is-warning">
-    <div class="hero-body">
-      <p class="title is-2">Quackers</p>
-      <p class="subtitle">New Quack</p>
-    </div>
-  </div>
+  <div class="block">
+    <%= render 'header' %>
+  </div> 
 
-  <h2 class="label">Messgae Preview</h2>
+  <div class="block">
+    <p class="subtitle is-4">Massage Preview</p>
+  </div> 
 
   <div class="field block">
     <%= form_with(model:@blog, url:blogs_path, local: true) do |form| %>
@@ -23,6 +22,7 @@
     <% end %>
   </div>
 
-  <%= render 'footer' %>
-
+  <div class="block">
+    <%= render 'footer' %>
+  </div>
 </div>

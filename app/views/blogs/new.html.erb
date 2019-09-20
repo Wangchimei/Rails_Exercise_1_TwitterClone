@@ -1,15 +1,18 @@
 <div class="container">
-  <div class="block hero is-warning">
-    <div class="hero-body">
-      <p class="title is-2">Quackers</p>
-      <p class="subtitle">New Quack</p>
-    </div>
-  </div>
+  <div class="block">
+    <%= render 'header' %>
+  </div> 
+  
+  <div class="block">
+    <p class="subtitle is-4">New Quack</p>
+  </div> 
 
   <div class="block">
-  <%= render 'form' %>
+    <%= render 'form' %>
   </div>
   
-  <%= render 'footer' %>
+  <div class="block">
+    <%= render 'footer' %>
+  </div>
 </div>
 

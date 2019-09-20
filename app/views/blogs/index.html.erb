@@ -1,8 +1,13 @@
 <div class="container">
-  <div class="block hero is-warning">
+  <div class="columns">
+    <div class="column is-2 hero is-info">
+      <%= image_tag 'Quackers.png', class: "image is-256x256"%>
+    </div>
+    <div class="column hero is-info">
       <div class="hero-body">
-      <p class="title is-2">Welcome to Quackers</p>
-      <p class="subtitle">Share Your Thoughts</p>
+        <p class="title is-3">Welcome to Quackers</p>
+        <p class="subtitle is-6">Quack Out Your Thoughts</p>
+      </div>
     </div>
   </div>
 
@@ -34,5 +39,7 @@
     <% end %>
   </div>
 
-  <%= render 'footer' %>
+  <div class="block">
+    <%= render 'footer' %>
+  </div>
 </div>
