@@ -1,5 +1,8 @@
 {
   "name": "Quackers",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "normalize.css": "^8.0.1"
+  }
 }

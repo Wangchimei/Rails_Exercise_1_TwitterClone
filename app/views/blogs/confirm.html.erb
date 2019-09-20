@@ -1,10 +1,24 @@
-<h2>Preview</h2>
+<div class="container">
+  <div class="block hero is-warning">
+    <div class="hero-body">
+      <p class="title is-2">Quackers</p>
+      <p class="subtitle">New Quack</p>
+    </div>
+  </div>
 
-<%= form_with(model:@blog, url:blogs_path, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <p><%= @blog.content %></p>
+  <h2 class="label">Messgae Preview</h2>
 
-  <%= form.submit "Quack!" %>
-  <%= form.submit "Back", name: 'back' %>
-<% end %>
-
+  <div class="field">
+    <%= form_with(model:@blog, url:blogs_path, local: true) do |form| %>
+      <div class="block">
+        <p><%= form.hidden_field :content%></p>
+        <p class="notification"><%= @blog.content%></p>
+      </div>
+      <div class="level">
+        <div class="level-left">
+          <p><%= form.submit "Quack!", class: "level-item button is-warning is-rounded" %></p>
+          <p><%= form.submit "Back", name: 'back', class: "level-item button is-text is-rounded" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>

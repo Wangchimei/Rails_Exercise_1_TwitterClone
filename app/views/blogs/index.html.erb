@@ -1,15 +1,35 @@
-<h1>Welcome to Quackers</h1>
-<div><%= link_to 'New Quack', new_blog_path, class: 'btn btn-default' %></div>
+<div class="container">
+  <div class="block hero is-warning">
+      <div class="hero-body">
+      <p class="title is-2">Welcome to Quackers</p>
+      <p class="subtitle">Share Your Thoughts</p>
+    </div>
+  </div>
 
-<div><%= notice %></div>
+  <% if flash[:notice] %>
+    <div class="block notification">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  
+  <div class="block button is-warning is-rounded">
+    <%= link_to 'New Quack', new_blog_path %>
+  </div>
 
-<div class="body">
-  <div class="card">
+  <div class="block columns is-multiline">
     <% @blog.each do |blog|%>
-    <p class="card-body"><%= blog.content %></p>
-    <p><%= link_to 'Edit', edit_blog_path(blog) %></p>
-    <p><%= link_to 'Show', blog_path(blog) %></p>
-    <p><%= link_to 'Delete', blog_path(blog), method: :delete, data: {confirm:"Are you sure you want to delete this post?"}%></p>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-content">
+              <p class="title is-4"><%= blog.content %></p>
+              <p class="subtitle is-6">Creared <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-footer-item"><%= link_to 'View', blog_path(blog) %></P>
+              <p class="card-footer-item"><%= link_to 'Edit', edit_blog_path(blog) %></P>
+              <p class="card-footer-item"><%= link_to 'Delete', blog_path(blog), method: :delete, data: {confirm:"Are you sure you want to delete this post?"} %></P>
+            </div>
+          </div>
+        </div>
     <% end %>
-  </div>  
-</div>
+  </div>

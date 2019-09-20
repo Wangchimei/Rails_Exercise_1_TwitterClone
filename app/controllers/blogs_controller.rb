@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :show, :destroy]
 
   def index
-    @blog = Blog.all
+    @blog = Blog.all.order(created_at: :desc)
   end
 
   def new
