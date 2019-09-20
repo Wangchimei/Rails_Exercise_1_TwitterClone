@@ -27,7 +27,7 @@
           <div class="card">
             <div class="card-content">
               <p class="title is-4"><%= blog.content %></p>
-              <p class="subtitle is-6">Creared <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago</p>
+              <p class="subtitle is-6">Created <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago</p>
             </div>
             <div class="card-footer">
               <p class="card-footer-item"><%= link_to 'View', blog_path(blog) %></P>
