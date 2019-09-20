@@ -7820,3 +7820,529 @@ Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
 
 
   [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-09-20 15:46:29 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (3.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 15:56:37 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 15:56:44 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.1ms)
+  Rendered blogs/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 15:56:45 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 15:56:47 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 15:56:52 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/12" for ::1 at 2019-09-20 15:56:54 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 15:56:57 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 15:57:29 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 15:57:56 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 15:57:57 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 15:57:57 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 15:59:38 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.0ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:00:14 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.3ms)
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:05:51 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:05:53 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (0.9ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:05:55 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/12" for ::1 at 2019-09-20 16:05:57 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:06:02 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:08:02 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (0.9ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:09:41 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.1ms)
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:09:52 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (0.8ms)
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:11:24 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (0.8ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:11:25 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (0.9ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:11:32 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (0.8ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:12:08 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.1ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:13:03 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:13:05 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.0ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-20 16:13:06 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8e7TpRDavTnLAdRYT6w99mmfNfkP5uOo4Pox6YGZjSe3T4WnMMnxaTeS3f03YtueKTs0rynQuYjU56e8RedPBQ==", "blog"=>{"content"=>"asasxax"}, "commit"=>"Quack!"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/confirm.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for ::1 at 2019-09-20 16:13:10 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e7RdxzrSmoevemvXP/3kIP86c7EbTz18c2Bpnm6J4gaiRrzDboz9I7X/6SveC7YugN5ccRbzJLzDSgA+asZE3Q==", "blog"=>{"content"=>"asasxax"}, "back"=>"Back"}
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.0ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:13:11 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/12/edit" for ::1 at 2019-09-20 16:13:16 +0900
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.2ms)
+  Rendered blogs/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:13:51 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/12/edit" for ::1 at 2019-09-20 16:13:52 +0900
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.2ms)
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:13:54 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:14:19 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/10/edit" for ::1 at 2019-09-20 16:14:24 +0900
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.0ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:14:27 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.5ms)
+  Rendered blogs/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/12" for ::1 at 2019-09-20 16:14:28 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:14:44 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs/12" for ::1 at 2019-09-20 16:14:44 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:14:49 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:25:44 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (1.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogs/new" for ::1 at 2019-09-20 16:25:49 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.1ms)
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs/confirm" for ::1 at 2019-09-20 16:25:54 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9xzyPWwuRRZjSTScivDS0xujIVPSgWfTuxfDICPCWCixvaQ/TD0JRp/aPTnyPjS7WwcgBfS3PfOPClV157yaCg==", "blog"=>{"content"=>"nkuk"}, "commit"=>"Quack!"}
+  Rendering blogs/confirm.html.erb within layouts/application
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/confirm.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for ::1 at 2019-09-20 16:25:56 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PxQSDK14PEL/1kRAqxnwdiQdL4/zatSRRfR1MVseQSXm5vMI+SZb5uVTxrxK76J4W/kAT/7WzVH13hyRX1Hn/g==", "blog"=>{"content"=>"nkuk"}, "back"=>"Back"}
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.0ms)
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:25:57 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/12/edit" for ::1 at 2019-09-20 16:25:59 +0900
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.2ms)
+  Rendered blogs/_footer.html.erb (0.4ms)
+  Rendered blogs/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:26:00 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs/12" for ::1 at 2019-09-20 16:26:01 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:26:04 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs/12" for ::1 at 2019-09-20 16:26:06 +0900
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:59
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/_footer.html.erb (0.2ms)
+  Rendered blogs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-20 16:26:06 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  ↳ app/views/blogs/index.html.erb:20
+  Rendered blogs/_footer.html.erb (0.3ms)
+  Rendered blogs/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
