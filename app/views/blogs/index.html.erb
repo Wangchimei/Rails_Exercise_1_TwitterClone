@@ -1,28 +1,17 @@
 <div class="container">
-  <div class="columns">
-    <div class="column is-2 hero is-info">
-      <%= image_tag 'Quackers.png', class: "image is-128x128"%>
-    </div>
-    <div class="column hero is-info">
-      <div class="hero-body">
-        <p class="title is-3">Welcome to Quackers</p>
-        <p class="subtitle is-5">Quack Out Your Thoughts</p>
+    <% if flash[:notice] %>
+      <div class="block"></div>
+      <div class="block notification">
+        <%= flash[:notice] %>
       </div>
-    </div>
-  </div>
-
-  <% if flash[:notice] %>
-    <div class="block notification">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-  
+    <% end %>
+  <div class="block"></div>
   <div class="block button is-warning is-rounded">
     <%= link_to 'New Quack', new_blog_path %>
   </div>
 
   <div class="block columns is-multiline">
-    <% @blog.each do |blog|%>
+    <% @blogs.each do |blog|%>
         <div class="column is-4">
           <div class="card">
             <div class="card-content">
@@ -37,9 +26,5 @@
           </div>
         </div>
     <% end %>
-  </div>
-
-  <div class="block">
-    <%= render 'footer' %>
   </div>
 </div>

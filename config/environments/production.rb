@@ -92,3 +92,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+# Precompile additional assets (application.js, application.css,
+#and all non-JS/CSS are already added)
+config.assets.precompile += %w( rails_admin/rails_admin.css rails_admin/rails_admin.js )
+# config.assets.initialize_on_precompile = false

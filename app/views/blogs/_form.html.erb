@@ -12,7 +12,7 @@
   <div class="field">
     <%= form_with(model: @blog, local: true, url: new_or_edit) do |form| %>
       <div class="block">
-        <label class="label"><%= form.label :content, "Messages" %></label>
+        <label class="label"><%= form.label :content, "Message" %></label>
         <p><%= form.text_field :content, class: "textarea"%></p>
       </div>
       <div class="level">

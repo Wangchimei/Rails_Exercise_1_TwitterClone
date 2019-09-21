@@ -1,8 +1,12 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :show, :destroy]
+  layout "header_footer", except: [:home]
+
+  def home
+  end
 
   def index
-    @blog = Blog.all.order(created_at: :desc)
+    @blogs = Blog.all.order(created_at: :desc)
   end
 
   def new

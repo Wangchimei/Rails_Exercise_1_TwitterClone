@@ -5,9 +5,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'blogs#index'
+  root 'blogs#home'
 
-  get '/index',to: 'blogs#index'
-  get '/new',to: 'blogs#new'
-  get '/edit',to: 'blogs#edit'
 end
