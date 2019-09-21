@@ -1,16 +1,18 @@
 <div class="container">
-    <% if flash[:notice] %>
-      <div class="block"></div>
-      <div class="block notification">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-  <div class="block"></div>
-  <div class="block button is-warning is-rounded">
-    <%= link_to 'New Quack', new_blog_path %>
+
+  <% if flash[:notice] %>
+    <div class="notification block">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <div class="block">
+    <div class="button is-warning is-rounded">
+      <%= link_to 'New Quack', new_blog_path %>
+    </div>
   </div>
 
-  <div class="block columns is-multiline">
+  <div class="columns is-multiline">
     <% @blogs.each do |blog|%>
         <div class="column is-4">
           <div class="card">

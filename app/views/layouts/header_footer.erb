@@ -7,28 +7,26 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
-  <header class="container">
-  <div class="columns">
-    <div class="column is-2 hero is-info">
-      <%= image_tag 'Quackers.png', class: "image is-128x128"%>
-    </div>
-    <div class="column hero is-info">
-      <div class="hero-body">
-        <p class="title is-3">Quackers</p>
-        <p class="subtitle is-5">Quack Out Your Thoughts</p>
+  <body class="site-wrapper container">
+    <header class="columns">
+      <div class="column is-2 hero is-info">
+      <div class="is-horizontal-center is-vertical-center"></div>
+        <%= image_tag 'Quackers.png', class: "image is-128x128"%>
       </div>
-    </div>
-  </div>
-</header>
-  <body>
-    <%= yield %>
-    <section class="block"></section>
-      <footer class="footer">
-        <div class="has-text-centered">
-          <p> © 2019 Quackers, Inc. </p>
+      <div class="column hero is-info">
+        <div class="hero-body">
+          <p class="title is-3">Quackers</p>
+          <p class="subtitle is-5">Quack Out Your Thoughts</p>
         </div>
-      </footer>
-    </section>
+      </div>
+    </header>
+    <main class="block main-content">
+      <%= yield %>
+    </main>
+    <footer class="footer">
+      <div class="has-text-centered">
+        <p> © 2019 Quackers, Inc. </p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,13 +1,4 @@
 <div class="hero is-info is-fullheight">
-  <div class="hero-head">
-    <nav class="navbar">
-      <div class="nav-brand">
-        <div class="nav-item">
-          <%= image_tag 'Quackers.png', class: "image is-128x128"%>
-        </div>
-      </div>
-    </nav>
-  </div>
   <div class="hero-body">
     <div class="container has-text-centered">
       <p class="title is-1">
@@ -15,6 +6,9 @@
       </p>
       <p class="subtitle is-3">
         Quack Out Your Thoughts
+      </p>
+      <p class="is-flex is-horizontal-center">
+        <%= image_tag 'Quackers.png', class: "image is-128x128"%>
       </p>
       <p class="button is-info is-inverted is-rounded">
         <%= link_to 'View All My Quacks', blogs_path %>
